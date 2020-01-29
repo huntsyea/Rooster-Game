@@ -1,0 +1,6 @@
+C:\Users\hunte\source\repos\Jan 27\Jan 27\obj\Debug\Jan 27.csprojAssemblyReference.cache
+C:\Users\hunte\source\repos\Jan 27\Jan 27\bin\Debug\Jan 27.exe.config
+C:\Users\hunte\source\repos\Jan 27\Jan 27\bin\Debug\Jan 27.exe
+C:\Users\hunte\source\repos\Jan 27\Jan 27\bin\Debug\Jan 27.pdb
+C:\Users\hunte\source\repos\Jan 27\Jan 27\obj\Debug\Jan 27.exe
+C:\Users\hunte\source\repos\Jan 27\Jan 27\obj\Debug\Jan 27.pdb
