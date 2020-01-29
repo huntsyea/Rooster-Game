@@ -12,9 +12,7 @@ namespace Rooster_Fighting__Game
         {
             Console.ForegroundColor = ConsoleColor.White;
 
-
-
-
+                       
             Console.Write("WELCOME TO EXTREME ROOSTER FIGHTING");
             Console.Write("\n");
             Console.Write("\nYou are walking along a path and find a rooster on the side of the road. \nYou decide to capture the rooster and take him to fight at the local market \n");
@@ -22,13 +20,15 @@ namespace Rooster_Fighting__Game
             Console.Write("\nEnter Your Rooster's name: ");
             String roosterName = Convert.ToString(Console.ReadLine());
             Rooster A = new Rooster(roosterName);
-
-            Player Bill = new Player();
-
-
             Console.Write($"Your prize fighter is named {A.name} and his attack power is {A.attackPower} points");
+
+            Player User = new Player();
+
+
+
             while (true)
             {
+
                 Console.Write("\nAre you ready to fight? (Y or N) ");
                 string userAns = Console.ReadLine();
                 Rooster B = new Rooster();
@@ -56,11 +56,13 @@ namespace Rooster_Fighting__Game
                     if ((A.attackPower) < (B.attackPower))
                     {
                         Console.ForegroundColor = ConsoleColor.DarkRed;
-                        Console.WriteLine("\nYour Rooster was killed");
+                        double z = User.losings();
+                        Console.WriteLine($"\nYour Rooster was killed You lose {z:C2}");
+                        User.bank -= z;
+                        Console.WriteLine($"Your bank is: {User.bank:C2}");
                         Console.ReadLine();
                         Console.ResetColor();
-                        break;
-                        Console.Write("\nBuy New Chicken? (Y or N)");
+                        Console.Write("\nWant To Buy New Chicken? (Y or N)");
                         string buynew = Console.ReadLine();
 
                         if (buynew == "N" || buynew == "n")
@@ -70,15 +72,25 @@ namespace Rooster_Fighting__Game
                         else if (buynew == "Y" || buynew == "y")
                         {
 
-                            Bill.bank -= 500;
-                            Console.WriteLine($"You were charged $250 for the new rooster.\nYour bank balance is now: {Bill.bank:C2}");
+                            User.bank -= 250;
+                            Console.WriteLine($"You were charged $250 for the new rooster.\nYour bank balance is now: {User.bank:C2}");
+                            Console.Write("\nEnter Your Rooster's name: ");
+                            String roosterNew = Convert.ToString(Console.ReadLine());
+                            Rooster C = new Rooster(roosterNew);
+                            Console.Write($"Your prize fighter is named {C.name} and his attack power is {C.attackPower} points");
+
                         }
 
+                        else
+                        {
+                            Console.WriteLine("Wrong Value");
+                            break;
+                        }
                     }
                     else if ((A.attackPower) > (B.attackPower))
                     {
                         Console.ForegroundColor = ConsoleColor.Yellow;
-                        double b = Bill.winnings();
+                        double b = User.winnings();
                         Console.WriteLine($"\nYour Rooster was the clear victor, slaughtering the local champion. \nYou are awarded {b:C2} ");
                         Console.ResetColor();
                         Console.Write("\nAdd Winnings To Bank? (Y or N)");
@@ -87,8 +99,8 @@ namespace Rooster_Fighting__Game
                         string addToBank = Console.ReadLine();
                         if (addToBank == "Y" || addToBank == "y")
                         {
-                            Bill.bank += b;
-                            Console.WriteLine($"Your bank is: {Bill.bank:C2}");
+                            User.bank += b;
+                            Console.WriteLine($"Your bank is: {User.bank:C2}");
                         }
 
 
@@ -117,10 +129,13 @@ namespace Rooster_Fighting__Game
                         {
                             break;
                         }
-                        else
+                        else 
                             continue;
                     }
+
+
                 }
+            
 
                 else
                 {
@@ -148,6 +163,13 @@ namespace Rooster_Fighting__Game
 
             }
 
+            public double losings()
+            {
+                Random losings = new Random();
+                return losings.Next(50, 1000);
+
+            }
+
         }
 
         class Rooster
@@ -161,7 +183,7 @@ namespace Rooster_Fighting__Game
             {
                 Random randomi = new Random();
                 name = Name;
-                attackPower = randomi.Next(1, 100);
+                attackPower = randomi.Next(1, 50);
 
             }
 
@@ -175,7 +197,7 @@ namespace Rooster_Fighting__Game
                 name = names[num] + " " + surnames[num2];
 
                 Random randomr = new Random();
-                attackPower = randomr.Next(1, 99);
+                attackPower = randomr.Next(1, 50);
 
 
 

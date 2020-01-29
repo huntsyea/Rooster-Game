@@ -1,0 +1,6 @@
+C:\Users\hunte\Documents\Rooster-Game\bin\Debug\ConsoleApp1.exe.config
+C:\Users\hunte\Documents\Rooster-Game\bin\Debug\ConsoleApp1.exe
+C:\Users\hunte\Documents\Rooster-Game\bin\Debug\ConsoleApp1.pdb
+C:\Users\hunte\Documents\Rooster-Game\obj\Debug\Rooster Fighting Game.csprojAssemblyReference.cache
+C:\Users\hunte\Documents\Rooster-Game\obj\Debug\ConsoleApp1.exe
+C:\Users\hunte\Documents\Rooster-Game\obj\Debug\ConsoleApp1.pdb
